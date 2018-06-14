@@ -1,25 +1,31 @@
-Blackjack Game for learning Python
+Blackjack with Python
 ==================================
 
-I made this code to teach some basics to a friend, maybe you find it useful too!
+A fork of https://github.com/nachogentile/learn-python-with-blackjack's functional implementation of Blackjack (blackjack.py)
 
-Three files are included:
-* Functional implementation of Blackjack (blackjack.py),
-* Object-oriented version of the game (blackjack_oo.py),
-* A very very basic test, to check some cases for the calculate_score function (test_blackjack.py).
+Major changes:
+* each player is dealt with two initial cards without being prompted,
+* players take turn to play,
+* keep track of stand count to terminate the game:
+```python
+        if 'Player 1' in stand_count and 'Player 2' in stand_count:
+            if player1_score > player2_score:
+                winner = 'Player 1'
+                print('%s is the winner!' % winner)
+            elif player2_score > player1_score:
+                winner = 'Player 2'
+                print('%s is the winner!' % winner)
+            else:
+                print('It\'s a draw!')
+                winner = 'nobody'
+``` 
+or to skip prompting a player who chose "stand":
+```python
+for player in players:
+    if player in stand_count:
+        continue
+```
 
-I encourage you to take my imperfect implementation and improve it. Improve it as much as you can, add libraries, 
-colours to terminal lines to make it beautiful, more players, features, and whatever you want to learn more python!
 
-I recommend to use PyCharm to edit the code:
-http://www.jetbrains.com/pycharm/
-
-In order to understand how the program runs in a easier way, use the debugger to stop the code and examine each line.
-The debugger is a very useful tool for beginners to understand how programming works, but also a mandatory tool for 
-the professional programmer in daily basis:
-http://www.jetbrains.com/pycharm/help/running-and-debugging.html
-
-In case you want to run each one of the scripts, assuming you have python installed, write in your console the following lines:
+To run the script on console:
 `$ python blackjack.py`
-To run object-oriented version:
-`$ python blackjack_oo.py`
