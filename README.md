@@ -1,7 +1,7 @@
 Blackjack with Python
 ==================================
 
-A fork of https://github.com/nachogentile/learn-python-with-blackjack's functional implementation of Blackjack (blackjack.py)
+A fork of https://github.com/nachogentile/learn-python-with-blackjack 's functional implementation of Blackjack (blackjack.py)
 
 Major changes:
 * each player is dealt with two initial cards without being prompted,
